@@ -65,17 +65,15 @@ public class BookingUI
 				
 			    System.out.println("Enter phone number");
 				phoneno = s.nextBigInteger();
-		         
+				if(phoneno.toString().length()!=10) 
 				try
 		        {
-				  if(phoneno.toString().length()!=10)
-				  {
-				     throw new InValidException("Invalid Number");
-				  }
+				     s.nextLine();
 				}
-				catch (InValidException e) 
+				catch (Exception e) 
 			    {
-				   System.out.println(e);
+				   System.err.println("The mobile number should contain 10 digits only");
+				   s.nextLine();
 			    }
 				
 				System.out.println("Enter Id number");
